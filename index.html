@@ -1,89 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Installment Calculator</title>
     <style>
       body {
-    font-family: Arial, sans-serif;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-}
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f9fa;
+        color: #343a40;
+      }
 
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
+      h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
 
-form {
-    display: flex;
-    flex-direction: column;
-}
+      form {
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
 
-label, input {
-    font-size: 18px;
-}
+      label,
+      input {
+        font-size: 18px;
+      }
 
-input {
-    margin-bottom: 10px;
-    padding: 5px;
-}
+      input {
+        margin-bottom: 10px;
+        padding: 5px;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+      }
 
-button {
-    font-size: 18px;
-    padding: 10px;
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
+      button {
+        font-size: 18px;
+        padding: 10px;
+        background-color: #007bff;
+        border: none;
+        color: white;
+        cursor: pointer;
+        margin-bottom: 20px;
+        border-radius: 50px;
+        transition: background-color 0.2s;
+        width: 200px;
+        margin: auto;
+      }
 
-button:hover {
-    background-color: #45a049;
-}
+      button:hover {
+        background-color: #0056b3;
+      }
 
-h2 {
-    font-size: 20px;
-}
+      h2 {
+        font-size: 20px;
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 10px;
+        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Installment Calculator</h1>
     <form id="calculator">
-        <label for="issuance">Date of Issuance:</label>
-        <input type="date" id="issuance" required readonly>
-        <br>
-        <label for="renewal">Date of Renewal:</label>
-        <input type="date" id="renewal" required readonly>
-        <br>
-        <label for="value">Contract Value (£):</label>
-        <input type="number" id="value" step="0.01" required>
-        <br>
-        <label for="tax">Service Tax (%):</label>
-        <input type="number" id="tax" step="0.01" value="10.33" required>
-        <br>
-        <button type="submit">Calculate Installment</button>
+      <label for="issuance">Date of Issuance:</label>
+      <input type="date" id="issuance" required />
+      <br />
+      <label for="renewal">Date of Renewal:</label>
+      <input type="date" id="renewal" required />
+      <br />
+      <label for="value">Contract Value (£):</label>
+      <input type="number" id="value" step="0.01" required />
+      <br />
+      <label for="tax">Service Tax (%):</label>
+      <input type="number" id="tax" step="0.01" value="10.33" required />
+      <br />
+      <button type="submit">Calculate Installment</button>
     </form>
     <h2>Installment Value: <span id="installment">-</span></h2>
     <script>
-      document.getElementById("calculator").addEventListener("submit", function (event) {
-    event.preventDefault();
+      document
+        .getElementById("calculator")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
 
-    const issuance = new Date(document.getElementById("issuance").value);
-    const renewal = new Date(document.getElementById("renewal").value);
-    const contractValue = parseFloat(document.getElementById("value").value);
-    const serviceTax = parseFloat(document.getElementById("tax").value) / 100;
+          const issuance = new Date(document.getElementById("issuance").value);
+          const renewal = new Date(document.getElementById("renewal").value);
+          const contractValue = parseFloat(
+            document.getElementById("value").value
+          );
+          const serviceTax =
+            parseFloat(document.getElementById("tax").value) / 100;
 
-    const monthsOfContract = (renewal.getFullYear() - issuance.getFullYear()) * 12 + (renewal.getMonth() - issuance.getMonth());
-    const installmentValueWithoutTax = contractValue / monthsOfContract;
-    const taxOnInstallment = serviceTax * installmentValueWithoutTax;
-    const installmentValue = installmentValueWithoutTax + taxOnInstallment;
+          const monthsOfContract =
+            (renewal.getFullYear() - issuance.getFullYear()) * 12 +
+            (renewal.getMonth() - issuance.getMonth());
+          const installmentValueWithoutTax = contractValue / monthsOfContract;
+          const taxOnInstallment = serviceTax * installmentValueWithoutTax;
+          const installmentValue =
+            installmentValueWithoutTax + taxOnInstallment;
 
-    document.getElementById("installment").textContent = "£" + installmentValue.toFixed(2);
-});
+          document.getElementById("installment").textContent =
+            "£" + installmentValue.toFixed(2);
+        });
     </script>
-</body>
+  </body>
 </html>
