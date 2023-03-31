@@ -7,36 +7,35 @@
     <style>
       body {
         font-family: Arial, sans-serif;
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 20px;
+        margin: 0;
+        padding: 0;
         background-color: #f8f9fa;
         color: #343a40;
       }
 
       h1 {
         font-size: 24px;
-        margin-bottom: 20px;
+        margin: 20px 0;
         text-align: center;
       }
 
       form {
-        display: flex;
-        flex-direction: column;
         background-color: #ffffff;
-        padding: 30px;
-        border-radius: 5px;
+        padding: 20px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       }
 
       label,
       input {
+        display: block;
         font-size: 18px;
+        margin: 10px 0;
+        width: 100%;
+        box-sizing: border-box;
       }
 
       input {
-        margin-bottom: 10px;
-        padding: 5px;
+        padding: 10px;
         border: 1px solid #ced4da;
         border-radius: 5px;
       }
@@ -48,11 +47,12 @@
         border: none;
         color: white;
         cursor: pointer;
-        margin-bottom: 20px;
+        margin-top: 20px;
         border-radius: 50px;
         transition: background-color 0.2s;
         width: 200px;
         margin: auto;
+        display: block;
       }
 
       button:hover {
@@ -65,9 +65,9 @@
         margin-top: 30px;
       }
 
-      @media (max-width: 600px) {
+      @media (min-width: 601px) {
         body {
-          padding: 10px;
+          display: none;
         }
       }
     </style>
@@ -76,17 +76,13 @@
     <h1>Installment Calculator</h1>
     <form id="calculator">
       <label for="issuance">Date of Issuance:</label>
-      <input type="date" id="issuance" required />
-      <br />
+      <input type="text" id="issuance" placeholder="YYYY-MM-DD" required />
       <label for="renewal">Date of Renewal:</label>
-      <input type="date" id="renewal" required />
-      <br />
+      <input type="text" id="renewal" placeholder="YYYY-MM-DD" required />
       <label for="value">Contract Value (£):</label>
       <input type="number" id="value" step="0.01" required />
-      <br />
       <label for="tax">Service Tax (%):</label>
       <input type="number" id="tax" step="0.01" value="10.33" required />
-      <br />
       <button type="submit">Calculate Installment</button>
     </form>
     <h2>Installment Value: <span id="installment">-</span></h2>
