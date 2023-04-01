@@ -30,7 +30,7 @@
     input {
       display: block;
       font-size: 1.125rem;
-      margin: 3px 0;
+      margin: 2px 0;
       width: 100%;
       box-sizing: border-box;
     }
@@ -65,6 +65,16 @@
       text-align: center;
       margin-top: 1.875rem;
     }
+    #result-heading{
+      margin-left: 30px;
+    }
+    #installmentValue{
+      width: 50%;
+      margin: auto;
+      border: none;
+      font-size: 20px;
+      text-align: center;
+    }
 
     @media (min-width: 601px) {
       body {
@@ -79,37 +89,36 @@
       }
     }
     @media screen and (max-width: 600px) {
-  button {
-    margin-top: 30px;
-    width: 9.375rem;
-    text-align: center;
-  }
-}
-
+      button {
+        margin-top: 30px;
+        width: 9.375rem;
+        text-align: center;
+      }
+    }
   </style>
   <body>
     <form action="calculator">
-       <h2>Installment Calculator</h2>
-    <label for="dateIssued">Date of Issuance:</label>
-    <input type="tel" id="dateIssued" placeholder="DD-MM-YYYY" />
-    <br /><br />
-    <label for="dateRenewed">Date of Renewal:</label>
-    <input type="tel" id="dateRenewed" placeholder="DD-MM-YYYY" />
-    <br /><br />
-    <label for="contractValue">Contract Value (£):</label>
-    <input type="number" id="contractValue"  />
-    <br /><br />
-    <label for="serviceTax">Service Tax (%):</label>
-    <input type="number" id="serviceTax" placeholder="0.00" value="10.33" />
-    <br /><br />
+      <h2>Installment Calculator</h2>
+      <label for="dateIssued">Date of Issuance:</label>
+      <input type="tel" id="dateIssued" placeholder="DD-MM-YYYY" />
+      <br /><br />
+      <label for="dateRenewed">Date of Renewal:</label>
+      <input type="tel" id="dateRenewed" placeholder="DD-MM-YYYY" />
+      <br /><br />
+      <label for="contractValue">Contract Value (£):</label>
+      <input type="number" id="contractValue" />
+      <br /><br />
+      <label for="serviceTax">Service Tax (%):</label>
+      <input type="number" id="serviceTax" placeholder="0.00" value="10.33" />
+      <br /><br />
     </form>
     <button onclick="calculateInstallment()">Calculate</button>
-   
-    
+
     <br /><br />
-    <label for="installmentValue">Installment Value (£):</label>
-    <input type="text" id="installmentValue" placeholder="0.00" disabled />
-      
+    <label for="installmentValue" id="result-heading">Installment Value (£):</label>
+    <h1></h1>
+    <input type="text" id="installmentValue" disabled />
+
     <script>
       function calculateInstallment() {
         // Retrieve user input values
