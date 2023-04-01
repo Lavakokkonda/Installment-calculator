@@ -30,13 +30,13 @@
     input {
       display: block;
       font-size: 1.125rem;
-      margin: 2px 0;
+      margin-top: 5px;
       width: 100%;
       box-sizing: border-box;
     }
 
     input {
-      padding: 0.625rem;
+      padding: 5px;
       border: 1px solid #ced4da;
       border-radius: 5px;
     }
@@ -101,20 +101,20 @@
       <h2>Installment Calculator</h2>
       <label for="dateIssued">Date of Issuance:</label>
       <input type="tel" id="dateIssued" placeholder="DD-MM-YYYY" />
-      <br /><br />
+      <br />
       <label for="dateRenewed">Date of Renewal:</label>
       <input type="tel" id="dateRenewed" placeholder="DD-MM-YYYY" />
-      <br /><br />
+      <br />
       <label for="contractValue">Contract Value (£):</label>
       <input type="number" id="contractValue" />
-      <br /><br />
+      <br />
       <label for="serviceTax">Service Tax (%):</label>
       <input type="number" id="serviceTax" placeholder="0.00" value="10.33" />
-      <br /><br />
+      <br />
     </form>
     <button onclick="calculateInstallment()">Calculate</button>
 
-    <br /><br />
+    <br />
     <label for="installmentValue" id="result-heading">Installment Value (£):</label>
     <h1></h1>
     <input type="text" id="installmentValue" disabled />
