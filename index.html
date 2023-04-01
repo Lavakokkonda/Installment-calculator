@@ -30,7 +30,7 @@
     input {
       display: block;
       font-size: 1.125rem;
-      margin: 0.625rem 0;
+      margin: 3px 0;
       width: 100%;
       box-sizing: border-box;
     }
@@ -75,11 +75,12 @@
       input[type="text"],
       input[type="number"] {
         font-size: 16px;
-        padding: 8px;
+        padding: 7px;
       }
     }
     @media screen and (max-width: 600px) {
   button {
+    margin-top: 30px;
     width: 9.375rem;
     text-align: center;
   }
@@ -96,7 +97,7 @@
     <input type="tel" id="dateRenewed" placeholder="DD-MM-YYYY" />
     <br /><br />
     <label for="contractValue">Contract Value (£):</label>
-    <input type="number" id="contractValue" placeholder="0.00" />
+    <input type="number" id="contractValue"  />
     <br /><br />
     <label for="serviceTax">Service Tax (%):</label>
     <input type="number" id="serviceTax" placeholder="0.00" value="10.33" />
