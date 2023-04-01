@@ -7,95 +7,83 @@
   </head>
   <style>
     body {
+      background-color: #f2f2f2;
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
-      color: #343a40;
-    }
-
-    h1 {
-      font-size: 1.5rem;
-      margin: 1.25rem 0;
-      text-align: center;
     }
 
     form {
-      background-color: #ffffff;
-      padding: 1.25rem;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    label,
-    input {
-      display: block;
-      font-size: 1.125rem;
-      margin-top: 5px;
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    input {
-      padding: 5px;
-      border: 1px solid #ced4da;
-      border-radius: 5px;
-    }
-
-    button {
-      font-size: 1.125rem;
-      padding: 0.625rem;
-      background-color: #007bff;
-      border: none;
-      color: white;
-      cursor: pointer;
-      margin-top: 1.25rem;
-      border-radius: 3.125rem;
-      transition: background-color 0.2s;
-      width: 12.5rem;
-      margin: auto;
-      display: block;
-    }
-
-    button:hover {
-      background-color: #0056b3;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
 
     h2 {
-      font-size: 1.25rem;
-      text-align: center;
-      margin-top: 1.875rem;
-    }
-    #result-heading{
-      margin-left: 30px;
-    }
-    #installmentValue{
-      width: 50%;
-      margin: auto;
-      border: none;
-      font-size: 20px;
-      text-align: center;
+      margin-top: 0;
     }
 
-    @media (min-width: 601px) {
-      body {
-        display: none;
-      }
+    label {
+      display: inline-block;
+      margin-bottom: 10px;
     }
-    @media screen and (max-width: 600px) {
-      input[type="text"],
-      input[type="number"] {
-        font-size: 16px;
-        padding: 7px;
-      }
+
+    input[type="tel"],
+    input[type="number"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
     }
-    @media screen and (max-width: 600px) {
-      button {
-        margin-top: 30px;
-        width: 9.375rem;
-        text-align: center;
-      }
+
+    input[type="tel"]:focus,
+    input[type="number"]:focus {
+      outline: none;
+      border-color: #333;
+    }
+
+    button {
+      display: block;
+      margin: 0 auto;
+      margin-top: 20px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      background-color: #4caf50;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #2e8b57;
+    }
+
+    #result-heading {
+      display: block;
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    #installmentValue {
+      display: block;
+      margin: 10px auto;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+      text-align: center;
+      width: 100%;
     }
   </style>
+
   <body>
     <form action="calculator">
       <h2>Installment Calculator</h2>
@@ -115,7 +103,9 @@
     <button onclick="calculateInstallment()">Calculate</button>
 
     <br />
-    <label for="installmentValue" id="result-heading">Installment Value (£):</label>
+    <label for="installmentValue" id="result-heading"
+      >Installment Value (£):</label
+    >
     <h1></h1>
     <input type="text" id="installmentValue" disabled />
 
