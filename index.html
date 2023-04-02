@@ -3,6 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Installment Calculator</title>
   </head>
   <style>
@@ -55,7 +62,7 @@
       padding: 12px 20px;
       border: none;
       border-radius: 50px;
-      background-color: #FF9400;
+      background-color: #ff9400;
       color: #fff;
       cursor: pointer;
       font-size: 16px;
@@ -88,6 +95,14 @@
       background-color: transparent;
       color: white;
     }
+    #play-button{
+      position: absolute;
+      padding: 0%;
+      width: 40px;
+      height: 40px;
+      top: 5px;
+      right: 45px;
+    }
   </style>
 
   <body>
@@ -107,6 +122,9 @@
       <br />
     </form>
     <button onclick="calculateInstallment()">Calculate</button>
+    <button onclick="calculateInstallment()" id="play-button">
+      <i class="fa-solid fa-play"></i>
+    </button>
 
     <br />
     <label for="installmentValue" id="result-heading"
